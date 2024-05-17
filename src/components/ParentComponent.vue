@@ -30,7 +30,7 @@ import ChildComponent from './ChildComponent.vue';
                 <input type="checkbox" v-model="tarea.completada" :id="'tarea.id'+index"
                 class="form-check-input">
 
-                <label :for="'tarea'+index" class="form-check-label"> {{ tarea.nombre }}</label>
+                <label :for="'tarea'+index" class="form-check-label" :class="{crossed: tarea.completada}"> {{ tarea.nombre }}</label>
 
                 <p v-if="tarea.completada" class="text-success"> Tarea completada!</p>
 
@@ -63,3 +63,9 @@ export default {
 }
 
 </script>
+
+<style scoped>
+.crossed{
+    text-decoration: line-through;
+}
+</style>
